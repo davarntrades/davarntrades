@@ -10,6 +10,7 @@ Originator of Post-Semantic Intelligence™ (PSI) • Inventor of GuardianOS™ 
 I build post-semantic alignment architectures — systems that preserve coherence, ethics, and identity after language, meaning, and conceptual reasoning fail.
 
 ⸻
+
 ⚛️ The Physics of Governance for All Intelligence™
 
 The law that keeps intelligence from collapsing under its own weight.
