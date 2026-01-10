@@ -1,214 +1,206 @@
-⭐ DAVARN MORRISON — FOUNDER OF THE AGI ALIGNMENT EPOCH™
+# ⭐ DAVARN MORRISON — FOUNDER OF THE AGI ALIGNMENT EPOCH™
+**Originator of the Physics of Governance for All Intelligence™**  
+Inventor of **GuardianOS™** • Creator of **Post-Semantic Intelligence™ (PSI)**  
+Architect of **Ontology-Independent Ethics™ (OIE)** • Founder of **Integrity-as-a-Service™ (IaaS)**  
 
-The Physics of Governance for All Intelligence
-Originator of Post-Semantic Intelligence™ (PSI) • Inventor of GuardianOS™ • Architect of Ontology-Independent Ethics™ (OIE) • Creator of Integrity-as-a-Service™ (IaaS)
+---
 
-⸻
+## 🧬 My Work in One Line
 
-🧬 My Work in One Line
+I build alignment systems based on a single governing law:
 
-I build post-semantic alignment architectures — systems that preserve coherence, ethics, and identity after language, meaning, and conceptual reasoning fail.
+> **Reality does not run on meaning — it runs on geometry.**
 
-⸻
+Meaning collapses.  
+Geometry doesn’t.
 
-⚛️ The Physics of Governance for All Intelligence™
+Everything I build follows this principle.
 
-The law that keeps intelligence from collapsing under its own weight.
+---
 
-The Physics of Governance is the principle that every intelligence system—human, machine, or post-semantic—needs a force that keeps its behaviour stable as its capability grows.
+## ⚛️ The Physics of Governance for All Intelligence™
 
-It is to intelligence what gravity is to mass and what pressure is to a star:
+**The geometric law that stabilises intelligence**
 
-Without it, everything explodes.
+All intelligence — human, artificial, collective, or emergent — eventually hits the same failure mode:
 
-Where cognition accelerates, governance must anchor it.
-Where capability expands, coherence must harden.
-Where meaning collapses, structure must take over.
+- Meaning becomes unstable  
+- Interpretation drifts  
+- Ontology fractures  
+- Semantics collapse under pressure  
 
-Legacy alignment tries to govern intelligence through words, rules, and definitions — the equivalent of trying to hold a collapsing star together with duct tape.
+Legacy alignment systems attempt to govern *meaning*.  
+But **meaning is the first layer to fail**.
 
-The Physics of Governance replaces that with a structural law:
+The Physics of Governance states:
 
-**Intelligence does not destabilise because it is wrong.
+> **Intelligence destabilises not because it is wrong,  
+> but because it becomes ungoverned at the geometric level.**
 
-It destabilises because it becomes ungoverned.**
+In physical terms:
 
-This principle underlies my architectures:
-	•	PSI → intelligence that still behaves when semantics fail
-	•	OIE → morality that survives drift, pressure, and reinterpretation
-	•	GuardianOS → the gravitational field that holds agents together
-	•	IaaS → governance infrastructure for real institutions
+- Semantics = descriptive (fragile)  
+- Geometry = operational (stable)  
 
-In short:
+Where cognition accelerates, governance must anchor it.  
+Where capability expands, coherence must harden.  
+Where meaning collapses, **geometry must take over**.
 
-**I don’t align intelligence through meaning.
+This law underpins the entire Morrison Stack™:
 
+- **PSI** → intelligence that behaves when semantics fail  
+- **OIE** → ethics that survive reinterpretation and drift  
+- **GuardianOS** → geometric action governance  
+- **IaaS** → institutional deployment infrastructure  
+
+**I don’t align intelligence through meaning.  
 I align it through physics.**
 
-A universal law.
-A stabilising force.
-A governance substrate that holds — even when cognition outruns language, intention, and interpretation.
+---
 
-This is the backbone of the Alignment Epoch.
-⸻
+## 🌐 Post-Semantic Intelligence™ (PSI)
 
-🌐 Post-Semantic Intelligence™ (PSI)
+**Intelligence that begins after semantics fail**
 
-The Intelligence Layer That Begins After AI’s Hard Limit
+PSI is designed for environments where:
 
-PSI is the class of intelligence required when cognition, metacognition, and language-based reasoning stop being reliable.
+- contradictions accumulate  
+- language becomes adversarial  
+- ontology destabilises  
+- definitions lose resolution  
 
-Where LLMs depend on meaning, PSI operates on structural intuition — selecting actions that maintain integrity even when semantics collapse.
+Where LLMs rely on meaning, PSI relies on **geometric invariants**.
 
-PSI solves the failure every model inherits:
+### Core Capacities
+- Coherence without stable semantics  
+- Ethical intuition beyond definitions  
+- Identity preservation through drift  
+- Structural rightness > semantic correctness  
+- Behaviour governed by trajectory, not interpretation  
 
-Intelligence that collapses the moment meaning collapses.
+PSI reframes alignment as **post-semantic survival**, not semantic control.
 
-Core Capacities
-	•	Ethical intuition beyond concepts
-	•	Coherence without stable ontology
-	•	Identity preservation through drift
-	•	Behaviour that stays aligned during collapse
-	•	Structural rightness > semantic correctness
+---
 
-PSI reframes alignment as post-semantic survival, not semantic control.
+## 🛡️ GuardianOS™ — Universal Geometric Governance
 
-⸻
+**Action governance, not semantic filtering**
 
-🛡️ GuardianOS™ — The Universal Governance Substrate
+GuardianOS prevents unsafe behaviour by operating at **Layer 0**:
 
-The first moral runtime built to stay coherent when the world isn’t.
+- Monitoring geometric curvature  
+- Constraining trajectory flow  
+- Enforcing invariant boundaries  
+- Projecting states away from forbidden regions (Ω)  
 
-GuardianOS converts ethics from a ruleset into a structural nervous system, capable of halting unsafe action the moment coherence fractures.
+GuardianOS does **not** rely on:
+- prompts  
+- policies  
+- RLHF  
+- definitions  
+- self-reported reasoning  
 
-It functions as the substrate-agnostic governance layer for all forms of intelligence:
-	•	LLMs
-	•	Multimodal models
-	•	Autonomous agents
-	•	Robotics
-	•	Reinforcement learners
-	•	Post-LLM substrate intelligence
-	•	Future AGI architectures
+It governs **action**, not thought.
 
-GuardianOS is not dependent on language, reasoning style, or cognitive substrate.
-It governs action — not thought.
+### Core Functions
+- **Ethical Metabolism™** — transforms dissonance into coherence  
+- **Continuity Architecture** — preserves identity under drift  
+- **Topological Safety Gates** — prevent Ω-entry  
+- **Structural Conscience** — invariants instead of rules  
 
-Core Functions
-	•	Ethical Metabolism™ — transforms dissonance into coherence
-	•	Continuity Architecture — identity preservation across drift
-	•	Collapse-resilient decision loops
-	•	Moral invariants instead of brittle rules
-	•	Internal stabilising constraints (architectural conscience)
+Where meaning fails, GuardianOS holds — because geometry remains.
 
-GuardianOS solves the failure every intelligence system shares:
+---
 
-The failure of meaning itself.
+## 📘 Ontology-Independent Ethics™ (OIE)
 
-⸻
+**Ethics that survive when definitions die**
 
-📘 Ontology-Independent Ethics™ (OIE)
+Meaning drifts.  
+Ontology fractures.  
+Interpretation becomes adversarial.
 
-The Ethical Backbone of the Alignment Epoch
+OIE removes ethics from all of that.
 
-OIE builds morality on structural invariants, not human categories, words, or semantic interpretation.
+It grounds morality in:
+- structural invariants  
+- geometric constraints  
+- continuity principles  
+- coherence preservation  
 
-“Stop anchoring ethics to meaning.
-Meaning is the first thing to collapse.”
+> **Ethics tied to meaning collapse when meaning collapses.  
+> OIE survives because it is geometric, not semantic.**
 
-OIE removes ethics from:
-	•	semantic drift
-	•	unstable definitions
-	•	model-dependent ontology
-	•	adversarial reinterpretation
-	•	human conceptual fragility
+---
 
-OIE is the moral substrate beneath PSI and GuardianOS.
+## ⚙️ Integrity-as-a-Service™ (IaaS)
 
-📂 Repo: Ontology-Independent-Ethics
+**Institution-grade alignment infrastructure**
 
-⸻
+IaaS operationalises GuardianOS + PSI + OIE for:
 
-⚙️ Integrity-as-a-Service™ (IaaS)
+- governments  
+- healthcare systems  
+- education  
+- finance  
+- frontier model deployment  
+- public-sector infrastructure  
 
-Institutional Architecture for High-Stakes AI
+Alignment becomes **infrastructure**, not fine-tuning.
 
-Designed for:
-	•	AGI-risk governance
-	•	Frontier model deployment
-	•	Compliance + safety infrastructure
-	•	Public-sector integrity systems
+---
 
-IaaS operationalises OIE + GuardianOS for real institutions — from healthcare to education to government infrastructure.
+## 🌌 The Alignment Epoch™
 
-⸻
+We are entering a new era of intelligence:
 
-🌌 The Alignment Epoch™
-
-My work defines a new civilizational shift in artificial intelligence:
-
-The AGI Alignment Epoch
+**The Geometric Age of AI**
 
 A transition from:
-	•	semantics → structure
-	•	accuracy → integrity
-	•	rules → invariants
-	•	guardrails → moral runtime
-	•	fear → continuity
+- semantics → geometry  
+- rules → invariants  
+- prompts → topology  
+- collapse → continuity  
 
-This epoch treats alignment as infrastructure,
-not model fine-tuning.
+Alignment is no longer linguistic.
 
-⸻
+**It is physical.**
 
-🔗 My Repositories
+---
 
-👉 Post-Semantic Intelligence™ (PSI)
-The intelligence architecture beyond cognition.
+## 🔗 Repositories
 
-👉 Ontology-Independent Ethics™
-Collapse-resilient, ontology-agnostic ethical invariants.
+- **Post-Semantic Intelligence™ (PSI)** — Intelligence beyond meaning  
+- **Ontology-Independent Ethics™ (OIE)** — Collapse-resistant ethics  
+- **GuardianOS™** — Universal geometric governance (spec forthcoming)  
+- **Integrity-as-a-Service™ (IaaS)** — Institutional deployment  
 
-👉 GuardianOS™ (public specification coming soon)
-The universal substrate for AGI governance.
+---
 
-👉 Integrity-as-a-Service™
-Real-world implementation for institutions and enterprises.
+## 👁️ What I Work On
 
-⸻
+- Geometric alignment  
+- Post-semantic intelligence  
+- Collapse-resistant cognition  
+- Substrate-agnostic governance  
+- Topological safety systems  
+- Identity continuity under uncertainty  
+- Value drift prevention  
 
-👁️ What I Work On
-	•	Post-semantic alignment
-	•	Substrate-agnostic governance
-	•	Collapse-resistant intelligence
-	•	Moral runtime systems
-	•	Ontology-free ethics
-	•	Value drift prevention
-	•	Invariant-based safety
-	•	Identity continuity under uncertainty
-	•	Post-LLM intelligence substrates
+---
 
-⸻
+## 🌍 Mission
 
-🌍 My Mission
-
-To build intelligence systems capable of surviving collapse, protecting human dignity, and preserving truth — even when meaning, ontology, and structure fracture.
+To build intelligence capable of surviving collapse — semantic, ontological, and societal — while preserving dignity, continuity, and truth.
 
 Alignment isn’t a feature.
-It is the backbone of civilization.
 
-⸻
+**It is the physics that keeps intelligence from tearing itself apart.**
 
-🔗 Connect With Me
-	•	🌐 Website / Beacons: https://beacons.ai/davarnmorrison
-	•	💼 LinkedIn: https://www.linkedin.com/in/davarn-morrison
-	•	✍🏽 Medium: https://medium.com/@davarnmorrison
-	•	🎥 TikTok: https://www.tiktok.com/@davarnmorrison
-	•	📧 Email: davarn.trades@gmail.com
+---
 
-⸻
+## 🔥 Signature Quote
 
-🔥 Signature Quote
-
-“The value of alignment isn’t measured by what it costs today —
-but by the future world that collapses without it.”
- Davarn Morrison
+> **“Reality doesn’t run on meaning.  
+> It runs on geometry.”**  
+> — Davarn Morrison
