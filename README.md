@@ -1,3 +1,5 @@
+<div align="center">
+
 # 🚀 DAVARN MORRISON — RESURRECTION TECH™ RESEARCH PORTAL
 
 <div align="center">
