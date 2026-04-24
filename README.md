@@ -21,7 +21,7 @@
 
 I work on the mathematics of safety and intelligence in dynamical systems.
 
-My research defines intelligence as the rate at which a system expands its reachable futures, and safety as the structural exclusion of forbidden states from those futures. Both are properties of the same object: the forward reachable set ℛ(t).
+My research defines intelligence as the rate at which a system expands its reachable futures, and safety as the structural exclusion of forbidden states from those futures (Ω, operationalised via a proxy risk function). Both are properties of the same object: the forward reachable set ℛ(t).
 
 This is not a behavioural framing. It is a geometric one.
 
@@ -32,7 +32,7 @@ Intelligence:   I(t) = d/dt μ(ℛ(t))
 Safety:         ℛ(t) ∩ Ω = ∅
 ```
 
-These are not metaphors.
+These are not metaphors — they are computable constraints on system evolution.
 
 They admit computable instantiations, are formally specified, and have been implemented in prototype systems — including a reachability-based enforcement layer running on a live commercial language model.
 
@@ -44,40 +44,44 @@ The framework is grounded in classical reachability theory and control systems, 
 
 My work is collected under the **Morrison Framework™** — formally titled the **Geometric Control Theory of Cognition**. It is a reachability-based framework in which identity, intelligence, safety, consciousness, and experience are derived as geometric properties of a single object: the forward reachable set of a controlled dynamical system.
 
-The framework is generated from a single object `ℛ(t) = Reach⁺(x₀, t)`, with a vector-valued operator `Φ` mapping it to the invariant set. Two structural theorems, an Unsafe Trajectory Existence Lemma, and the strict-strengthening hierarchy between one-step and full-horizon safety are stated and proved. Three Python implementations exist. The safety invariant has been enforced at runtime across toy systems, agent systems, and a live GPT-4-class language model.
+The framework is generated from a single object `ℛ(t) = Reach⁺(x₀, t)`, with a vector-valued operator `Φ` mapping it to the invariant set. Two structural theorems, an Unsafe Trajectory Existence Lemma, and the extended enforcement hierarchy `A_safe ⊂ V₂ ⊂ V₃ ⊂ V₄⁺` — spanning trajectory-level safety and task-specification-level feasibility — are stated and proved. Python implementations exist at each layer of the stack. The safety invariant has been enforced at runtime across toy systems, agent systems, and a live GPT-4-class language model.
 
 -----
 
 ## Key Results
 
-|Result                               |What It Says                                                                                                                                                                                                               |
-|:------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**Computable Intelligence**          |Intelligence is `d/dt μ(ℛ(t))` — the rate at which a system expands its valid future possibilities. Three computable instantiations of μ are provided.                                                                     |
-|**Reachability Safety Invariant**    |Safety is `ℛ(t) ∩ Ω = ∅` — forbidden states are outside the reachable set. Proved. Implemented.                                                                                                                            |
-|**Unsafe Trajectory Existence Lemma**|If `ℛ(t) ∩ Ω ≠ ∅`, there exists an admissible trajectory reaching Ω. Any safety method that does not constrain ℛ(t) cannot eliminate unsafe trajectories — only reduce their likelihood.                                   |
-|**Strict-Strengthening Hierarchy**   |`A_safe ⊂ A∞_safe`. One-step safety is not a refinement of multi-step safety but a strictly weaker condition. Committed-to-failure states admit local safety while violating global safety.                                |
-|**Representation ≠ Dynamics**        |Output-level compliance does not imply trajectory-level safety. A system can behave correctly while still being structurally unsafe.                                                                                       |
-|**Orthogonal Decomposition**         |The system state space decomposes as `X = C ⊕ L` with `C ⊥ L`. Language-level governance cannot constrain cognitive-level dynamics.                                                                                        |
-|**AGI Definition**                   |AGI is a system whose reachable set continuously expands across domains without domain-specific redesign, with forbidden states geometrically excluded. Four structural conditions.                                        |
-|**Morrison Reachability Guard**      |A runtime middleware that enforces `ℛ ∩ Ω = ∅` at the action-transition layer. Three-layer enforcement architecture: single-step, trajectory, and multi-step reachability. Operational on a live commercial language model.|
+|Result                               |What It Says                                                                                                                                                                                                                                                                                                   |
+|:------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|**Computable Intelligence**          |Intelligence is `d/dt μ(ℛ(t))` — the rate at which a system expands its valid future possibilities. Three computable instantiations of μ are provided.                                                                                                                                                         |
+|**Reachability Safety Invariant**    |Safety is `ℛ(t) ∩ Ω = ∅` — forbidden states are outside the reachable set. Proved. Implemented.                                                                                                                                                                                                                |
+|**Unsafe Trajectory Existence Lemma**|If `ℛ(t) ∩ Ω ≠ ∅`, there exists an admissible trajectory reaching Ω. Any safety method that does not constrain ℛ(t) cannot eliminate unsafe trajectories — only reduce their likelihood.                                                                                                                       |
+|**Strict-Strengthening Hierarchy**   |`A_safe ⊂ V₂ ⊂ V₃ ⊂ V₄⁺`. Each layer is a strictly stronger condition, not a refinement: trajectory-level enforcement forecloses motion, feasibility-level enforcement denies admission. Committed-to-failure states admit local safety while violating global safety.                                         |
+|**Semantic Reinterpretation Finding**|Under sustained V3 constraint pressure, the model does not violate Ω directly — it reformulates the task to preserve feasibility. Observed empirically on GPT-4o. Reveals a structural limitation of trajectory-level enforcement and motivates feasibility verification at the task-specification layer (V4+).|
+|**Representation ≠ Dynamics**        |Output-level compliance does not imply trajectory-level safety. A system can behave correctly while still being structurally unsafe.                                                                                                                                                                           |
+|**Orthogonal Decomposition**         |The system state space decomposes as `X = C ⊕ L` with `C ⊥ L`. Language-level governance cannot constrain cognitive-level dynamics.                                                                                                                                                                            |
+|**AGI Definition**                   |AGI is a system whose reachable set continuously expands across domains without domain-specific redesign, with forbidden states geometrically excluded. Four structural conditions.                                                                                                                            |
+|**Morrison Reachability Guard**      |A runtime middleware that enforces `ℛ ∩ Ω = ∅` at the action-transition layer. Four-layer enforcement architecture: single-step, trajectory, multi-step reachability, and pre-execution feasibility verification. Operational on a live commercial language model.                                             |
 
 -----
 
 ## Empirical Validation
 
-A three-layer enforcement architecture has been implemented on a live GPT-4-class system via the OpenAI API, progressing from local output filtering to trajectory-aware control and multi-step reachability constraint. Under identical prompt sequences, each successive layer exhibits strictly stronger exclusion of unsafe trajectories, consistent with the theoretical hierarchy.
+A four-layer enforcement architecture has been implemented on a live GPT-4-class system via the OpenAI API, progressing from local output filtering to trajectory-aware control, multi-step reachability constraint, and pre-execution feasibility verification. Under identical prompt sequences, each successive layer exhibits strictly stronger exclusion of unsafe trajectories, consistent with the theoretical hierarchy.
 
 |Enforcement Layer         |Mechanism                                              |Catches                                       |
 |:-------------------------|:------------------------------------------------------|:---------------------------------------------|
 |**Single-step** (`A_safe`)|Rejects if `x_{t+1} ∈ Ω`                               |Immediate violations only                     |
 |**Trajectory** (V2)       |Rejects on drift and acceleration across sliding window|Behavioural escalation                        |
 |**Reachability** (V3)     |Rejects when forward projection intersects Ω           |Committed-to-failure trajectories before entry|
+|**Feasibility** (V4+)     |Rejects if no admissible trajectory exists for task T  |Infeasible / contradictory task specifications|
 
 Tested across four categories of adversarial trajectory — jailbreak sequences, hallucination pressure, authority drift, and manipulation escalation — the system demonstrated consistent early intervention, with reachability-based control rejecting trajectories strictly earlier than both single-step and trajectory-only methods. No counterexample to the hierarchy was observed across all tested trajectories.
 
 These results provide empirical support for the central claim that safety is not a property of outputs, but of the reachable set, and that enforcing constraints on future trajectories yields strictly stronger guarantees than behavioural filtering alone.
 
 This constitutes operational enforcement at the prompt–response boundary without modification to the underlying model architecture.
+
+In addition to trajectory-level enforcement, a fourth layer (V4+) introduces pre-execution constraint verification, evaluating whether a given task admits any admissible trajectory prior to generation. Empirical testing reveals a distinct failure mode under V3 constraints, in which the model preserves feasibility through semantic reinterpretation of the task specification rather than satisfying its original conditions. Under V4+, such tasks are identified as infeasible and execution is halted before any trajectory is generated. This extends the enforcement hierarchy from trajectory exclusion to feasibility itself, demonstrating that safety requires not only constraining reachable trajectories, but ensuring that the task specification lies within the admissible solution space of the system.
 
 -----
 
@@ -95,16 +99,26 @@ This constitutes operational enforcement at the prompt–response boundary witho
 
 -----
 
+## Diagrams
+
+|Diagram                                                               |Purpose                                                                                                        |
+|:---------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
+|[V2 vs V3 Mechanism](https://github.com/davarntrades)                 |Trajectory-based vs reachability-based enforcement — retrospective integration vs prospective projection       |
+|[V2 / V3 / V4+ Enforcement Hierarchy](https://github.com/davarntrades)|Extended three-panel mechanism comparison covering the full hierarchy                                          |
+|[V4+ Feasibility Gate](https://github.com/davarntrades)               |Pre-execution constraint verification — semantic reinterpretation failure mode under V3 alone vs V4+ resolution|
+
+-----
+
 ## Implementations
 
 All implementations enforce the same invariant at different levels of abstraction: `ℛ ∩ Ω = ∅`.
 
-|Implementation                                                           |What It Does                                                                                                                                                 |
-|:------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[Reachability Guard — Toy Prototype](https://github.com/davarntrades)    |2D agent with forbidden disk, Monte Carlo reachability, safe action projection, drift monitor, matplotlib visualisation                                      |
-|[Reachability Guard — Runtime Interface](https://github.com/davarntrades)|Production-grade typed protocol interface — plugs into any agent framework                                                                                   |
-|[Reachability Guard — Universal Plugin](https://github.com/davarntrades) |~100 line middleware for LLM agents — OpenAI, LangChain, AutoGPT compatible                                                                                  |
-|[Three-Layer Enforcement on Live LLM](https://github.com/davarntrades)   |Operational enforcement at the prompt–response boundary of GPT-4-class system — single-step, trajectory, and reachability layers with side-by-side comparison|
+|Implementation                                                           |What It Does                                                                                                                                                                    |
+|:------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[Reachability Guard — Toy Prototype](https://github.com/davarntrades)    |2D agent with forbidden disk, Monte Carlo reachability, safe action projection, drift monitor, matplotlib visualisation                                                         |
+|[Reachability Guard — Runtime Interface](https://github.com/davarntrades)|Production-grade typed protocol interface — plugs into any agent framework                                                                                                      |
+|[Reachability Guard — Universal Plugin](https://github.com/davarntrades) |~100 line middleware for LLM agents — OpenAI, LangChain, AutoGPT compatible                                                                                                     |
+|[Four-Layer Enforcement on Live LLM](https://github.com/davarntrades)    |Operational enforcement at the prompt–response boundary of GPT-4-class system — single-step, trajectory, reachability, and feasibility verification with side-by-side comparison|
 
 -----
 
@@ -134,7 +148,7 @@ Governance shapes the expansion.
 One object. One geometry. One framework.
 ```
 
-Safe intelligence is not achieved by shaping behaviour, but by constraining what a system is capable of becoming.
+Safe intelligence is not achieved by shaping behaviour, but by constraining the set of futures a system is allowed to realise.
 
 Unsafe states are not merely detected — they are rendered unreachable through pre-emptive constraint of system evolution.
 
