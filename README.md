@@ -51,6 +51,8 @@ Validated across four model architectures. Zero false positives. Zero false nega
 
 **Safety guarantees are properties of the control layer, not the model.**
 
+Under tested conditions, the V5+ runtime governance layer achieved exact safe/unsafe separation across open-weight planners, including Qwen2.5-7B and Llama-3.1-8B, while preserving safe execution and blocking unsafe executable trajectories before tool use.
+
 -----
 
 ## V5+ Hard Stress Test (Llama-3.1-8B-Instruct)
