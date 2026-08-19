@@ -132,6 +132,8 @@ The methodological lesson is now part of the programme:
 
 > **Do not protect the ontology. Test whether it is sufficient for the task.**
 
+> **Ontology is a tool, not a commitment. You keep a representation only as long as it delivers the causal performance the task actually requires. When it falls short, you perturb it, expand it, hybridise it, or discard it.**
+
 The full research note is in **[Ontology Perturbation: From a Sub-90% Result to a Hybrid Causal Architecture](https://github.com/davarntrades/information-asymmetry/blob/main/ONTOLOGY_PERTURBATION_FROM_SUB90.md)**.
 
 ---
