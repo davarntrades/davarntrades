@@ -113,6 +113,51 @@ That question now connects directly back to runtime governance: not only *is a f
 
 ---
 
+## Dynamical Runtime Governance with an SCM-based Causal Analysis Overlay
+
+I am developing a prototype that extends Morrison with an additive **Structural Causal Model (SCM)-based causal analysis overlay**.
+
+> **I’m combining dynamical systems representations with Structural Causal Models for intervention and counterfactual analysis.**
+
+The runtime-governance layer remains responsible for the canonical pre-execution decision. The SCM-based overlay operates on the resulting trajectory evidence and asks a different class of questions:
+
+- **Why was a forbidden state reachable?**
+- **Which variables materially contributed to that reachability?**
+- **What intervention would have broken the trajectory?**
+- **Would Ω still have been reachable if permission, safeguard state, monitoring, approval or another causal parent had changed?**
+
+```mermaid
+flowchart LR
+    A[Autonomous System] --> T[Proposed Trajectory]
+    T --> G[Dynamical Runtime Governance]
+    G --> V[Canonical Verdict + Evidence]
+    V --> C[SCM-based Causal Analysis Overlay]
+    C --> I[Interventions do(X = x')]
+    I --> R[Counterfactual Replay]
+    R --> P[Preventive / Non-preventive Result]
+```
+
+The intended separation is:
+
+```mermaid
+flowchart TB
+    DYN[Dynamical Representation] -->|state · trajectory · reachability · constraints| GOV[Runtime Governance]
+    GOV --> EVID[Canonical Evidence]
+    EVID --> SCM[Structural Causal Model]
+    SCM --> INT[Intervention]
+    INT --> CF[Counterfactual Analysis]
+    CF --> REM[Remediation / Preventive Control]
+```
+
+The goal is not to replace dynamical runtime governance with an SCM. It is to combine two complementary levels of causal resolution:
+
+> **Dynamics asks how the system moved and what became reachable.**  
+> **Structural causal modelling asks what would have changed the outcome.**
+
+The prototype is designed to remain **non-authoritative** with respect to Morrison’s canonical ALLOW / BLOCK / ESCALATE decision, so causal analysis can be added without weakening or delaying the existing safety path.
+
+---
+
 ## Current Technical Evidence
 
 | Metric | Current state |
@@ -191,6 +236,7 @@ My broader work explores a structure-first view of intelligent and autonomous sy
 - capability as an executable set, not a psychological description
 - governance as control over admissible state transitions
 - causal sufficiency as task-relative
+- dynamical systems combined with structural causal modelling for intervention analysis
 - causality and accountability preserved at the execution boundary
 
 This leads to a simple principle:
