@@ -128,13 +128,15 @@ The runtime-governance layer remains responsible for the canonical pre-execution
 
 ```mermaid
 flowchart LR
-    A[Autonomous System] --> T[Proposed Trajectory]
+    A[Autonomous System] --> T[Proposed Tool Trajectory]
     T --> G[Dynamical Runtime Governance]
-    G --> V[Canonical Verdict + Evidence]
-    V --> C[SCM-based Causal Analysis Overlay]
-    C --> I[Interventions do(X = x')]
+    G --> D[ALLOW / BLOCK / ESCALATE]
+    G --> E[Evidence Chain]
+    E --> C[SCM-based Causal Analysis Overlay]
+    C --> Q[Counterfactual Queries]
+    Q --> I[Intervention]
     I --> R[Counterfactual Replay]
-    R --> P[Preventive / Non-preventive Result]
+    R --> P[Preventive Control Result]
 ```
 
 The intended separation is:
