@@ -163,10 +163,9 @@ This leads to a simple principle:
 ## Selected Repositories
 
 - **[Morrison Runtime Governance](https://github.com/davarntrades/Morrison-Runtime-Governance)** — pre-execution trajectory governance
-- **[The Morrison Stack](https://github.com/davarntrades/-The-Morrison-Stack-)** — structural model of intelligent systems
-- **[Morrison Falsifiability Protocol](https://github.com/davarntrades/-Morrison-Falsifiability-Protocol-MFP-1.0-)** — falsifiable evaluation framework
-- **[Reachability Constraints Over State-Space Regions](https://github.com/davarntrades/-Reachability-Constraints-Over-State-Space-Regions)** — reachability-oriented governance research
-- **[Ontology-Independent Ethics](https://github.com/davarntrades/Ontology-Independent-Ethics)** — substrate-independent governance research
+- **[Information Asymmetry](https://github.com/davarntrades/information-asymmetry)** — research on causal sufficiency, representation and information loss
+- **[Resurrection Tech Enterprise](https://github.com/davarntrades/resurrection-tech-enterprise)** — enterprise deployment and integration infrastructure
+- **[Trajectory](https://github.com/davarntrades/Trajectory-Always-On-Executive-Intelligence-)** — always-on executive intelligence system
 
 ---
 
