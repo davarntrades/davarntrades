@@ -4,7 +4,7 @@
 
 **Founder & CEO — Resurrection Tech Ltd · London**
 
-*Pre-execution runtime governance for consequential AI systems*
+*Pre-execution runtime governance for AI systems that take actions*
 
 [![Runtime Governance](https://img.shields.io/badge/Morrison_Runtime_Governance-Pre--Execution-111111?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
 [![Evaluations](https://img.shields.io/badge/Evaluations-129%2C857-1a5c2a?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
@@ -21,7 +21,7 @@
 
 ## What I’m Building
 
-I’m building **Morrison Runtime Governance** at Resurrection Tech: a model-agnostic control layer for AI agents that evaluates proposed tool trajectories **before consequential execution**.
+I’m building **Morrison Runtime Governance** at Resurrection Tech: a model-agnostic control layer for AI agents that evaluates proposed tool trajectories **before real-world execution**.
 
 The core question is not only:
 
