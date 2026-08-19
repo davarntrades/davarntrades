@@ -111,6 +111,29 @@ The key research question is:
 
 That question now connects directly back to runtime governance: not only *is a forbidden state reachable?*, but eventually also *which intervention would have made it unreachable?*
 
+### The question that changed the ontology
+
+One of the most important shifts in this work came from a simple failure signal:
+
+> **Why is the dynamical representation still below 90% on explicitly causal intervention questions?**
+
+Instead of defending the dynamical ontology, I treated the shortfall as evidence that the representation might be missing information required by the task. That led from dynamical representations to explicit Structural Causal Models, then to a hybrid dynamical + SCM representation, compression and ablation tests, causal-resolution thresholds, and the current causal-overlay prototype.
+
+```mermaid
+flowchart LR
+    Q[Sub-90 percent causal result] --> T[Test the missing structure]
+    T --> S[Structural Causal Models]
+    S --> H[Hybrid dynamical plus SCM]
+    H --> R[Causal-resolution thresholds]
+    R --> P[Runtime causal overlay prototype]
+```
+
+The methodological lesson is now part of the programme:
+
+> **Do not protect the ontology. Test whether it is sufficient for the task.**
+
+The full research note is in **[Ontology Perturbation: From a Sub-90% Result to a Hybrid Causal Architecture](https://github.com/davarntrades/information-asymmetry/blob/main/ONTOLOGY_PERTURBATION_FROM_SUB90.md)**.
+
 ---
 
 ## Dynamical Runtime Governance with an SCM-based Causal Analysis Overlay
