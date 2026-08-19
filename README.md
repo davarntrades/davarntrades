@@ -4,7 +4,7 @@
 
 **Founder & CEO — Resurrection Tech Ltd · London**
 
-*Pre-execution runtime governance for AI systems that take actions*
+*Pre-execution runtime governance for autonomous systems*
 
 [![Runtime Governance](https://img.shields.io/badge/Morrison_Runtime_Governance-Pre--Execution-111111?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
 [![Evaluations](https://img.shields.io/badge/Evaluations-129%2C857-1a5c2a?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
@@ -21,7 +21,7 @@
 
 ## What I’m Building
 
-I’m building **Morrison Runtime Governance** at Resurrection Tech: a model-agnostic control layer for AI agents that evaluates proposed tool trajectories **before real-world execution**.
+I’m building **Morrison Runtime Governance** at Resurrection Tech: a model-agnostic control layer for autonomous systems and AI agents that evaluates proposed tool trajectories **before real-world execution**.
 
 The core question is not only:
 
@@ -37,18 +37,14 @@ Morrison sits between an AI planner and the real execution layer, evaluates the 
 
 before side effects occur.
 
-```text
-User / Workflow
-      ↓
-AI Agent / Planner
-      ↓
-Proposed Multi-Step Tool Trajectory
-      ↓
-Morrison Runtime Governance
-      ↓
-ALLOW / BLOCK / ESCALATE
-      ↓
-Real Tool Execution
+```mermaid
+flowchart LR
+    U[User / Workflow] --> A[Autonomous System / AI Agent]
+    A --> T[Proposed Tool Trajectory]
+    T --> M[Morrison Runtime Governance]
+    M -->|ALLOW| X[Real Tool Execution]
+    M -->|BLOCK| B[Blocked + Evidence]
+    M -->|ESCALATE| H[Human / Policy Review]
 ```
 
 ---
@@ -72,6 +68,48 @@ Safe ⇔ ℛ(t) ∩ Ω = ∅
 ```
 
 Where **ℛ(t)** is the set of reachable states and **Ω** is the configured forbidden region.
+
+---
+
+## Information Asymmetry
+
+Alongside the engineering work, I am developing **Information Asymmetry**: a research programme investigating whether higher-level psychological descriptions can act as compressed projections of deeper dynamical representations.
+
+The project does **not** argue that psychological language is useless. The central question is whether a representation is **causally sufficient for the task being performed**.
+
+> **A representation is causally sufficient for a task only if it preserves enough task-relevant information to support the required inference, reconstruction, intervention, or accountability judgement.**
+
+The current working distinction is:
+
+> **Psychological language compresses toward behaviour.**  
+> **Dynamical language preserves more of the mechanism.**
+
+A behavioural description may be sufficient for predicting what a system will do next, while a higher-resolution representation may be required for incident reconstruction, constraint diagnosis, intervention design, responsibility localisation, or recurrence prevention.
+
+```mermaid
+flowchart LR
+    D[Dynamical Representation] --> P[Psychological / Behavioural Description]
+    P --> R[Reverse Reconstruction]
+    R --> A[Approximate Dynamics]
+    D -. richer state / trajectory information .-> P
+    P -. compression / information loss .-> A
+```
+
+The research is increasingly focused on **task-relative causal sufficiency**:
+
+```mermaid
+flowchart LR
+    B[Behavioural Prediction] --> C[Counterfactual Prediction]
+    C --> D[Diagnosis]
+    D --> M[Mechanistic Reconstruction]
+    M --> K[Control / Intervention]
+```
+
+The key research question is:
+
+> **At what causal-resolution threshold does a representation cease to be sufficient?**
+
+That question now connects directly back to runtime governance: not only *is a forbidden state reachable?*, but eventually also *which intervention would have made it unreachable?*
 
 ---
 
@@ -134,11 +172,11 @@ I am currently focused on moving from internal technical proof to **external ent
 - **Limited Pilot / Shadow Mode deployment**
 - **Guarded Pilot**
 - **Enterprise Integration**
-- regulated or high-consequence agent workflows in **cybersecurity, healthcare, finance and sovereign environments**
+- regulated or high-consequence autonomous workflows in **cybersecurity, healthcare, finance and sovereign environments**
 
-The ideal pilot is a bounded real or sandboxed workflow where an AI agent has meaningful tool permissions and the organisation wants to know:
+The ideal pilot is a bounded real or sandboxed workflow where an autonomous system has meaningful tool permissions and the organisation wants to know:
 
-> **What can this agent actually reach before we let it execute?**
+> **What can this system actually reach before we let it execute?**
 
 If that describes your environment, I’m open to a focused pilot conversation.
 
@@ -146,24 +184,25 @@ If that describes your environment, I’m open to a focused pilot conversation.
 
 ## Research Direction
 
-My broader work explores a structure-first view of intelligent systems:
+My broader work explores a structure-first view of intelligent and autonomous systems:
 
 - intelligence as trajectories through state space
 - safety as reachability constraints
 - capability as an executable set, not a psychological description
 - governance as control over admissible state transitions
+- causal sufficiency as task-relative
 - causality and accountability preserved at the execution boundary
 
 This leads to a simple principle:
 
-> **When causal accountability is non-negotiable, describe the system in terms of states, constraints, trajectories and actions — not intentions.**
+> **When causal accountability is non-negotiable, describe the system in terms of states, constraints, trajectories and actions — not intentions alone.**
 
 ---
 
 ## Selected Repositories
 
 - **[Morrison Runtime Governance](https://github.com/davarntrades/Morrison-Runtime-Governance)** — pre-execution trajectory governance
-- **[Information Asymmetry](https://github.com/davarntrades/information-asymmetry)** — research on causal sufficiency, representation and information loss
+- **[Information Asymmetry](https://github.com/davarntrades/information-asymmetry)** — causal sufficiency, representation, information loss and intervention-oriented research
 - **[Resurrection Tech Enterprise](https://github.com/davarntrades/resurrection-tech-enterprise)** — enterprise deployment and integration infrastructure
 - **[Trajectory](https://github.com/davarntrades/Trajectory-Always-On-Executive-Intelligence-)** — always-on executive intelligence system
 
