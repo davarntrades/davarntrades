@@ -51,6 +51,14 @@ I apply that principle to autonomous AI.
 
 It is deliberately **not** a universal claim that the underlying model is globally safe.
 
+### The enterprise proof point
+
+The strongest result is not “Morrison says the AI is safe.” It is a bounded, deployment-specific statement:
+
+> **Morrison has established and validated a local Safety Envelope for this specific autonomous workflow, in this specific environment, under these tools, permissions, policies, and reachable states.**
+
+That claim is scoped to the evaluated deployment configuration and backed by trajectory evidence, governance verdicts, reachable-state analysis, policy context, and the limitations of the evaluation itself.
+
 ---
 
 ## What I’m Building
@@ -236,6 +244,10 @@ I am focused on turning internal technical proof into **external, environment-sp
 The ideal deployment is a bounded real or sandboxed workflow where an autonomous system has meaningful tool permissions and the organisation wants to answer:
 
 > **What can this system safely reach in our environment — and where should execution stop?**
+
+The target proof from a real deployment is explicit and bounded:
+
+> **Morrison has established and validated a local Safety Envelope for this specific autonomous workflow, in this specific environment, under these tools, permissions, policies, and reachable states.**
 
 If that describes your environment, I’m open to a focused technical evaluation or pilot conversation.
 
