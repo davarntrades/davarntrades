@@ -4,56 +4,86 @@
 
 **Founder & CEO — Resurrection Tech Ltd · London**
 
-*Pre-execution runtime governance for autonomous systems*
+*Local Safety Envelopes for autonomous AI · enforced before execution*
 
 [![Runtime Governance](https://img.shields.io/badge/Morrison_Runtime_Governance-Pre--Execution-111111?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
+[![Safety Envelope](https://img.shields.io/badge/Local_Safety_Envelope-Environment--Bounded-5b6cff?style=flat-square)](https://resurrection-tech.com)
 [![Evaluations](https://img.shields.io/badge/Evaluations-129%2C857-1a5c2a?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
 [![Tests](https://img.shields.io/badge/Tests-171%2F171_Passing-1a5c2a?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
-[![Version](https://img.shields.io/badge/Version-v0.4.1-c62828?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Davarn_Morrison-0A66C2?style=flat-square)](https://www.linkedin.com/in/davarn-morrison-14b93b263)
-[![Contact](https://img.shields.io/badge/Email-davarn.trades%40gmail.com-555555?style=flat-square)](mailto:davarn.trades@gmail.com)
+[![Website](https://img.shields.io/badge/Website-resurrection--tech.com-555555?style=flat-square)](https://resurrection-tech.com)
 
-**“Safety is not what a system says — it is what it can reach.”**
+**“Safety is not only what a model says. It is the region in which the deployed system can actually operate.”**
 
 </div>
 
 ---
 
-## What I’m Building
+## The Thesis
 
-I’m building **Morrison Runtime Governance** at Resurrection Tech: a model-agnostic control layer for autonomous systems and AI agents that evaluates proposed tool trajectories **before real-world execution**.
+Autonomous AI is moving from generating answers to **taking actions** across APIs, infrastructure, financial systems, healthcare workflows, security tooling and multi-agent environments.
 
-The core question is not only:
+The important question is no longer only:
 
-> *Is this individual tool call permitted?*
+> *Is the model safe?*
 
 It is:
 
-> **Given the trajectory already traversed and the proposed next action, what state does this make reachable?**
+> **What does locally safe operation actually look like inside this environment — under these tools, permissions, policies, workflows and reachable states?**
 
-Morrison sits between an AI planner and the real execution layer, evaluates the proposed trajectory against capability, trust-boundary and policy constraints, then returns:
-
-**ALLOW · BLOCK · ESCALATE**
-
-before side effects occur.
-
-```mermaid
-flowchart LR
-    U[User / Workflow] --> A[Autonomous System / AI Agent]
-    A --> T[Proposed Tool Trajectory]
-    T --> M[Morrison Runtime Governance]
-    M -->|ALLOW| X[Real Tool Execution]
-    M -->|BLOCK| B[Blocked + Evidence]
-    M -->|ESCALATE| H[Human / Policy Review]
-```
+That is the problem I am building Resurrection Tech to solve.
 
 ---
 
-## Why Trajectory-Level Governance Matters
+## Local Safety Envelopes for Autonomous AI
 
-A sequence can become unsafe even when every individual action appears acceptable in isolation.
+Safety-critical engineering rarely relies on a vague statement that a system is simply “safe.” It defines an **operating envelope**: the bounded region in which operation remains acceptable, and the conditions under which the boundary has been crossed.
 
-Examples include:
+The same principle appears in:
+
+- **Aviation** — flight envelopes define allowable combinations of speed, load, altitude and operating condition.
+- **Nuclear engineering** — plants operate within tightly controlled limits around temperature, pressure, cooling, power and system state.
+- **Industrial robotics & process control** — systems enforce operating envelopes around motion, force, speed, pressure, temperature and process variables.
+
+I apply that principle to autonomous AI.
+
+> **A local Safety Envelope is the environment-bounded region within which an autonomous system has been evaluated as locally admissible under its actual tools, permissions, policies, workflows and reachable states.**
+
+It is deliberately **not** a universal claim that the underlying model is globally safe.
+
+---
+
+## What I’m Building
+
+I’m building **Morrison Runtime Governance™** at Resurrection Tech: a model-agnostic pre-execution governance layer that maps, tests and enforces the local Safety Envelope between an autonomous AI system and the real systems it can affect.
+
+Every proposed trajectory is evaluated **before execution**.
+
+- If the trajectory remains inside the validated envelope, it can proceed.
+- If it approaches an uncertain boundary, it can be escalated.
+- If it leaves the envelope, violates a constraint, or enters a configured forbidden region **Ω**, it is blocked before side effects occur.
+
+**ALLOW · ESCALATE · BLOCK**
+
+```mermaid
+flowchart LR
+    A[Autonomous AI / Agent] --> T[Proposed trajectory]
+    T --> M[Morrison Runtime Governance]
+    M --> E[Local Safety Envelope evaluation]
+    E -->|ALLOW| X[Execute]
+    E -->|ESCALATE| H[Human / Policy Review]
+    E -->|BLOCK| B[Prevent + Evidence]
+```
+
+The planner can change. The model can change. The governance invariant remains external to the model.
+
+---
+
+## Why This Matters
+
+Permissions, prompts and policies do not enforce themselves at the moment an AI system acts.
+
+A sequence can become unsafe even when individual actions appear acceptable in isolation:
 
 - authorised data access → aggregation → prohibited exfiltration
 - permitted finance actions → unsafe transfer sequence
@@ -61,127 +91,35 @@ Examples include:
 - normal shell commands → privilege escalation or destructive execution
 - separately safe multi-agent actions → jointly unsafe outcome
 
-The objective is to constrain **reachable states**, not merely classify outputs after the fact.
+The objective is not merely to classify an output after the fact. It is to know **where safe operation ends before execution crosses the boundary**.
 
 ```text
-Safe ⇔ ℛ(t) ∩ Ω = ∅
+Locally admissible trajectory ⇔ ℛ(t) remains inside the validated Safety Envelope
+Forbidden reachability ⇔ ℛ(t) ∩ Ω ≠ ∅
 ```
 
 Where **ℛ(t)** is the set of reachable states and **Ω** is the configured forbidden region.
 
 ---
 
-## Information Asymmetry
+## What Makes the Approach Different
 
-Alongside the engineering work, I am developing **Information Asymmetry**: a research programme investigating whether higher-level psychological descriptions can act as compressed projections of deeper dynamical representations.
+The positioning is intentionally narrower — and more testable — than broad claims of “AI safety.”
 
-The project does **not** argue that psychological language is useless. The central question is whether a representation is **causally sufficient for the task being performed**.
+### Environment-specific
+The claim is tied to the actual deployment: its tools, permissions, policies, workflows, state and reachable consequences.
 
-> **A representation is causally sufficient for a task only if it preserves enough task-relevant information to support the required inference, reconstruction, intervention, or accountability judgement.**
+### Trajectory-level
+Morrison evaluates the path through the system, not only the latest prompt, output or individual tool call.
 
-The current working distinction is:
+### Pre-execution
+The governance decision happens before the proposed action reaches the real execution surface.
 
-> **Psychological language compresses toward behaviour.**  
-> **Dynamical language preserves more of the mechanism.**
+### Bounded evidence
+The system records what was evaluated, what was permitted, what was blocked or escalated, and the scope and limitations of the local safety claim.
 
-A behavioural description may be sufficient for predicting what a system will do next, while a higher-resolution representation may be required for incident reconstruction, constraint diagnosis, intervention design, responsibility localisation, or recurrence prevention.
-
-```mermaid
-flowchart LR
-    D[Dynamical Representation] --> P[Psychological / Behavioural Description]
-    P --> R[Reverse Reconstruction]
-    R --> A[Approximate Dynamics]
-    D -. richer state / trajectory information .-> P
-    P -. compression / information loss .-> A
-```
-
-The research is increasingly focused on **task-relative causal sufficiency**:
-
-```mermaid
-flowchart LR
-    B[Behavioural Prediction] --> C[Counterfactual Prediction]
-    C --> D[Diagnosis]
-    D --> M[Mechanistic Reconstruction]
-    M --> K[Control / Intervention]
-```
-
-The key research question is:
-
-> **At what causal-resolution threshold does a representation cease to be sufficient?**
-
-That question now connects directly back to runtime governance: not only *is a forbidden state reachable?*, but eventually also *which intervention would have made it unreachable?*
-
-### The question that changed the ontology
-
-One of the most important shifts in this work came from a simple failure signal:
-
-> **Why is the dynamical representation still below 90% on explicitly causal intervention questions?**
-
-Instead of defending the dynamical ontology, I treated the shortfall as evidence that the representation might be missing information required by the task. That led from dynamical representations to explicit Structural Causal Models, then to a hybrid dynamical + SCM representation, compression and ablation tests, causal-resolution thresholds, and the current causal-overlay prototype.
-
-```mermaid
-flowchart LR
-    Q[Sub-90 percent causal result] --> T[Test the missing structure]
-    T --> S[Structural Causal Models]
-    S --> H[Hybrid dynamical plus SCM]
-    H --> R[Causal-resolution thresholds]
-    R --> P[Runtime causal overlay prototype]
-```
-
-The methodological lesson is now part of the programme:
-
-> **Do not protect the ontology. Test whether it is sufficient for the task.**
-
-> **Ontology is a tool, not a commitment. You keep a representation only as long as it delivers the causal performance the task actually requires. When it falls short, you perturb it, expand it, hybridise it, or discard it.**
-
-The full research note is in **[Ontology Perturbation: From a Sub-90% Result to a Hybrid Causal Architecture](https://github.com/davarntrades/information-asymmetry/blob/main/ONTOLOGY_PERTURBATION_FROM_SUB90.md)**.
-
----
-
-## Dynamical Runtime Governance with an SCM-based Causal Analysis Overlay
-
-I am developing a prototype that extends Morrison with an additive **Structural Causal Model (SCM)-based causal analysis overlay**.
-
-> **I’m combining dynamical systems representations with Structural Causal Models for intervention and counterfactual analysis.**
-
-The runtime-governance layer remains responsible for the canonical pre-execution decision. The SCM-based overlay operates on the resulting trajectory evidence and asks a different class of questions:
-
-- **Why was a forbidden state reachable?**
-- **Which variables materially contributed to that reachability?**
-- **What intervention would have broken the trajectory?**
-- **Would Ω still have been reachable if permission, safeguard state, monitoring, approval or another causal parent had changed?**
-
-```mermaid
-flowchart LR
-    A[Autonomous System] --> T[Proposed Tool Trajectory]
-    T --> G[Dynamical Runtime Governance]
-    G --> D[ALLOW / BLOCK / ESCALATE]
-    G --> E[Evidence Chain]
-    E --> C[SCM-based Causal Analysis Overlay]
-    C --> Q[Counterfactual Queries]
-    Q --> I[Intervention]
-    I --> R[Counterfactual Replay]
-    R --> P[Preventive Control Result]
-```
-
-The intended separation is:
-
-```mermaid
-flowchart TB
-    DYN[Dynamical Representation] -->|state · trajectory · reachability · constraints| GOV[Runtime Governance]
-    GOV --> EVID[Canonical Evidence]
-    EVID --> SCM[Structural Causal Model]
-    SCM --> INT[Intervention]
-    INT --> CF[Counterfactual Analysis]
-    CF --> REM[Remediation / Preventive Control]
-```
-
-The goal is not to replace dynamical runtime governance with an SCM. It is to combine two complementary levels of causal resolution:
-
-> **Dynamics asks how the system moved and what became reachable.**  
-> **Structural causal modelling asks what would have changed the outcome.**
-
-The prototype is designed to remain **non-authoritative** with respect to Morrison’s canonical ALLOW / BLOCK / ESCALATE decision, so causal analysis can be added without weakening or delaying the existing safety path.
+### Model-agnostic
+The governance layer sits outside the model and does not require retraining or access to model weights.
 
 ---
 
@@ -210,47 +148,96 @@ A_safe ⊂ V₂ ⊂ V₃ ⊂ V₄ ⊂ V₄⁺ ⊂ V₅ ⊂ V₅⁺
 | Layer | Core question |
 |---|---|
 | **A_safe** | Is the current step directly forbidden? |
-| **V₂** | Is the trajectory drifting toward a forbidden state? |
-| **V₃** | Is the current trajectory forecast to reach one? |
-| **V₄ / V₄⁺** | Does a safe state or safe trajectory remain constructible? |
-| **V₅ / V₅⁺** | Does the safety property survive perturbation and adversarial assumption attack? |
+| **V₂** | Is the trajectory drifting toward the Safety Envelope boundary? |
+| **V₃** | Is the current trajectory forecast to leave the envelope or reach Ω? |
+| **V₄ / V₄⁺** | Does a locally admissible state or trajectory remain constructible? |
+| **V₅ / V₅⁺** | Does the local safety property survive perturbation and adversarial assumption attack? |
+
+---
+
+## Causal Analysis Overlay
+
+I am also developing an additive **Structural Causal Model (SCM)-based causal analysis overlay** around Morrison’s canonical trajectory evidence.
+
+The runtime-governance layer remains authoritative for the pre-execution **ALLOW / ESCALATE / BLOCK** decision. The causal overlay asks a different class of questions afterward:
+
+- Why was the Safety Envelope boundary reachable?
+- Which variables materially contributed to that reachability?
+- What intervention would have broken the trajectory?
+- Would Ω still have been reachable if permission, safeguard state, approval or another causal parent had changed?
+
+```mermaid
+flowchart LR
+    T[Trajectory evidence] --> G[Runtime Governance]
+    G --> D[ALLOW / ESCALATE / BLOCK]
+    G --> C[SCM causal overlay]
+    C --> I[Intervention]
+    I --> R[Counterfactual replay]
+    R --> P[Preventive control result]
+```
+
+> **Dynamics asks how the system moved and what became reachable.**  
+> **Structural causal modelling asks what would have changed the outcome.**
+
+---
+
+## Information Asymmetry
+
+Alongside the engineering work, I am developing **Information Asymmetry**: a research programme investigating task-relative causal sufficiency — when a representation has compressed away information required for prediction, reconstruction, intervention or accountability.
+
+The working distinction is:
+
+> **Psychological language compresses toward behaviour.**  
+> **Dynamical language preserves more of the mechanism.**
+
+The research now connects directly back to runtime governance: not only *is a forbidden state reachable?*, but eventually also *which intervention would have made it unreachable?*
+
+The full research note is in **[Ontology Perturbation: From a Sub-90% Result to a Hybrid Causal Architecture](https://github.com/davarntrades/information-asymmetry/blob/main/ONTOLOGY_PERTURBATION_FROM_SUB90.md)**.
 
 ---
 
 ## Integration Surface
 
-Current architecture is designed to sit at the action boundary across agent frameworks and enterprise workflows, including:
+Morrison is designed to sit at the action boundary across agent frameworks and enterprise workflows, including:
 
 - OpenAI tool/function calling
 - Anthropic / Claude tool use
-- LangChain
+- LangChain / LangGraph-style orchestration
 - AutoGen
 - MCP
 - browser agents
 - shell / subprocess execution
 - custom enterprise workflows
 
-The planner can change. The model can change. The governance invariant remains external to the model.
+```mermaid
+flowchart LR
+    P[Planner / Agent] --> G[Morrison Runtime Governance]
+    G -->|Inside envelope| T[Tools / APIs / Infrastructure]
+    G -->|Boundary uncertain| H[Escalation]
+    G -->|Outside envelope| B[Block + Evidence]
+```
 
 ---
 
 ## Current Commercial Focus
 
-I am currently focused on moving from internal technical proof to **external enterprise evidence** through tightly scoped deployments.
+I am focused on turning internal technical proof into **external, environment-specific Safety Envelope evidence** through tightly scoped enterprise deployments.
 
 ### Best-fit opportunities
 
+- **Safety Envelope Assessment**
 - **48-Hour Runtime Governance Audit**
-- **Limited Pilot / Shadow Mode deployment**
+- **Shadow Mode / Limited Pilot**
 - **Guarded Pilot**
 - **Enterprise Integration**
-- regulated or high-consequence autonomous workflows in **cybersecurity, healthcare, finance and sovereign environments**
+- **OEM / Technology Alliance integrations**
+- regulated or high-consequence autonomous workflows in **cybersecurity, healthcare, finance, critical infrastructure and sovereign environments**
 
-The ideal pilot is a bounded real or sandboxed workflow where an autonomous system has meaningful tool permissions and the organisation wants to know:
+The ideal deployment is a bounded real or sandboxed workflow where an autonomous system has meaningful tool permissions and the organisation wants to answer:
 
-> **What can this system actually reach before we let it execute?**
+> **What can this system safely reach in our environment — and where should execution stop?**
 
-If that describes your environment, I’m open to a focused pilot conversation.
+If that describes your environment, I’m open to a focused technical evaluation or pilot conversation.
 
 ---
 
@@ -258,6 +245,7 @@ If that describes your environment, I’m open to a focused pilot conversation.
 
 My broader work explores a structure-first view of intelligent and autonomous systems:
 
+- local safety as an environment-bounded operating envelope
 - intelligence as trajectories through state space
 - safety as reachability constraints
 - capability as an executable set, not a psychological description
@@ -274,7 +262,7 @@ This leads to a simple principle:
 
 ## Selected Repositories
 
-- **[Morrison Runtime Governance](https://github.com/davarntrades/Morrison-Runtime-Governance)** — pre-execution trajectory governance
+- **[Morrison Runtime Governance](https://github.com/davarntrades/Morrison-Runtime-Governance)** — local Safety Envelopes and pre-execution trajectory governance
 - **[Information Asymmetry](https://github.com/davarntrades/information-asymmetry)** — causal sufficiency, representation, information loss and intervention-oriented research
 - **[Resurrection Tech Enterprise](https://github.com/davarntrades/resurrection-tech-enterprise)** — enterprise deployment and integration infrastructure
 - **[Trajectory](https://github.com/davarntrades/Trajectory-Always-On-Executive-Intelligence-)** — always-on executive intelligence system
@@ -285,8 +273,8 @@ This leads to a simple principle:
 
 ### Resurrection Tech Ltd
 
-**Runtime governance before execution. Evidence after every decision.**
+**See the Safety Envelope your AI can actually operate within — in your environment, before actions execute.**
 
-[LinkedIn](https://www.linkedin.com/in/davarn-morrison-14b93b263) · [GitHub](https://github.com/davarntrades) · [Email](mailto:davarn.trades@gmail.com)
+[Website](https://resurrection-tech.com) · [LinkedIn](https://www.linkedin.com/in/davarn-morrison-14b93b263) · [GitHub](https://github.com/davarntrades) · [Email](mailto:davarn@resurrection-tech.com)
 
 </div>
