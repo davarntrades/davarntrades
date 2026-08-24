@@ -442,11 +442,10 @@ This leads to two principles:
 ## Selected Repositories
 
 - **[Morrison Runtime Governance](https://github.com/davarntrades/Morrison-Runtime-Governance)** — bounded local Safety Envelopes and pre-execution trajectory governance
-- **[The Morrison Framework](https://github.com/davarntrades/-The-Morrison-Framework-)** — causal sufficiency, dynamical representation and human / system-level structural research
+- **[Information Asymmetry](https://github.com/davarntrades/information-asymmetry)** — causal sufficiency, representation, information loss and intervention-oriented research
 - **[Causal Information Sufficiency](https://github.com/davarntrades/-The-Morrison-Framework-/blob/main/CAUSAL_INFORMATION_SUFFICIENCY.md)** — coarse-graining, task-relative causal preservation and intervention
-- **[Morrison Falsifiability Protocol](https://github.com/davarntrades/-Morrison-Falsifiability-Protocol-MFP-1.0-)** — falsifiability-oriented evaluation framework
-- **[Reachability Constraints Over State Space Regions](https://github.com/davarntrades/-Reachability-Constraints-Over-State-Space-Regions)** — state-space and reachability research
-- **[Geometry-Based Biometrics: Pre-Event Governance](https://github.com/davarntrades/-Geometry-Based-Biometrics-Pre-Event-Governance)** — extension of pre-event / dynamical reasoning toward biometric systems
+- **[Resurrection Tech Enterprise](https://github.com/davarntrades/resurrection-tech-enterprise)** — enterprise deployment and integration infrastructure
+- **[Trajectory](https://github.com/davarntrades/Trajectory-Always-On-Executive-Intelligence-)** — always-on executive intelligence system
 
 ---
 
