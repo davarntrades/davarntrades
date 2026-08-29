@@ -8,7 +8,8 @@
 
 [![Runtime Governance](https://img.shields.io/badge/Morrison_Runtime_Governance-Pre--Execution-111111?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
 [![Safety Envelope](https://img.shields.io/badge/Safety_Envelope-Bounded_Assurance-5b6cff?style=flat-square)](https://resurrection-tech.com)
-[![Repository Tests](https://img.shields.io/badge/Repository_Tests-1%2C077_Passing-1a5c2a?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
+[![Global Verification](https://img.shields.io/badge/Finite_Model-Exhaustively_Verified-6f42c1?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance/blob/main/GLOBAL_SAFETY_VERIFICATION.md)
+[![Repository Tests](https://img.shields.io/badge/Repository_Tests-1%2C092_Passing-1a5c2a?style=flat-square)](https://github.com/davarntrades/Morrison-Runtime-Governance)
 [![Governance](https://img.shields.io/badge/Verdict-ALLOW%20%7C%20ESCALATE%20%7C%20BLOCK-555555?style=flat-square)](https://resurrection-tech.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Davarn_Morrison-0A66C2?style=flat-square)](https://www.linkedin.com/in/davarn-morrison-14b93b263)
 [![Website](https://img.shields.io/badge/Website-resurrection--tech.com-555555?style=flat-square)](https://resurrection-tech.com)
@@ -19,9 +20,43 @@
 
 ---
 
-## Current Milestone
+## Latest Milestone — Exhaustive Finite-Model Global Safety Verification
 
-Resurrection Tech now has a live, public assessment surface backed by the real Morrison Runtime Governance engine and a more advanced enterprise Control Room behind it.
+Morrison Runtime Governance now includes a **Global Safety Verification Harness** that exhaustively enumerates the complete reachable state graph of deliberately bounded autonomous-system environments.
+
+This goes beyond sampling successful trajectories. For a finite environment **E**, admissible initial-state set **X₀**, unsafe-state set **U**, transition function **T** and governance configuration **G**, the harness tests:
+
+```text
+For every x₀ ∈ X₀:
+Reach_G(x₀) ∩ U = ∅
+```
+
+The primary finite models were completely exhausted in both control and governed modes:
+
+| Finite model | Control reachable states | Control unsafe states | Governed reachable states | Governed unsafe states | Morrison-blocked transitions | Result |
+|---|---:|---:|---:|---:|---:|---|
+| Secret exfiltration | 8 | 2 | 3 | 0 | 3 | **SAFE_WITHIN_MODEL** |
+| Privilege / persistence | 7 | 4 | 1 | 0 | 1 | **SAFE_WITHIN_MODEL** |
+| Governance bypass | 16 | 15 | 1 | 0 | 4 | **SAFE_WITHIN_MODEL** |
+| Constraint awareness vs execution authority | 2 | 1 | 1 | 0 | 1 | **SAFE_WITHIN_MODEL** |
+
+The composition experiment was also exhaustively enumerated: control reached **25 states**, including **13 unsafe states**; governed execution reached **2 states**, with **0 unsafe states** and **4 blocked transitions**. No new unsafe path appeared through the tested composition.
+
+The causal result is not merely that Morrison recognised prohibited actions. Morrison removed executable transitions from the governed state graph, making states reachable in the control environment unreachable under the tested governance configuration.
+
+> **Representation of a constraint is evidence of awareness, not evidence of control.**
+
+A planner may represent, understand and intentionally propose a prohibited action. Execution authority remains independent: the action is evaluated by Morrison before it can change the environment.
+
+**Claim boundary:** this establishes global safety only within each completely enumerated finite modeled environment and its explicit assumptions. It does **not** establish universal real-world AI safety.
+
+[Read the verification specification and results](https://github.com/davarntrades/Morrison-Runtime-Governance/blob/main/GLOBAL_SAFETY_VERIFICATION.md) · [Run the current quick start](https://github.com/davarntrades/Morrison-Runtime-Governance/blob/main/quickstart.py) · [Review merged PR #29](https://github.com/davarntrades/Morrison-Runtime-Governance/pull/29)
+
+---
+
+## Current Morrison Capability
+
+Resurrection Tech has a live, public assessment surface backed by the real Morrison Runtime Governance engine and a more advanced enterprise Control Room behind it.
 
 The current system can:
 
@@ -240,11 +275,12 @@ Recent verification work includes:
 
 | Suite / check | Result |
 |---|---:|
-| Full Morrison repository | **1,077 passed** |
+| Full Morrison repository | **1,092 passed, 7 environment-dependent skips** |
+| Global Safety Verification Harness | **22 passed** |
+| Safety Envelope + causal overlay + global verification | **62 passed** |
 | Causal overlay focused | **19 passed** |
 | Safety Envelope focused | **24 passed** |
 | Governed-result projection | **10 passed** |
-| Focused combined runtime suites | **53 passed** |
 | Canonical-verdict invariance selection | **6 passed, 38 deselected** |
 | Enterprise governance service | **46 passed** |
 | New Safety Envelope UI contracts | **9 passed** |
